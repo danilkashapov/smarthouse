@@ -1,0 +1,313 @@
+*, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+html, body{
+    width: 100%;
+    height: 100%;
+    background: #f2f2f2;
+    font-family: 'Tahoma', sans-serif;
+}
+.login {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.login form {
+    box-shadow: 0 12px 15px 0 rgba(180, 198, 204, 0.4);
+    display: block;
+    width: 100%;
+    max-width: 400px;
+    background: #fff;
+    text-align: center;
+    padding: 30px;
+    border-radius: 10px;
+    animation: fadeUp 1s;
+    animation-delay: .3s;
+}
+.login form h1 {
+    padding-bottom: 15px;
+}
+.login form input{
+    border-radius: 3px;
+    text-align: center;
+    width: 100%;
+    font-size: 15px;
+    display: block;
+    max-width: 300px;
+    height: 40px;
+    padding: 0 10px ;
+    margin: 15px auto 0;
+    border: 1px solid #d2d2d2;
+}
+.login form input[type=submit]{
+    color: #fff;
+    padding: 0 20px;
+    cursor: pointer;
+    background: #34bfec;
+    border: none;
+    display: inline-block;
+    width: auto;
+}
+.login form input:focus {
+    border-color: #34bfec;
+}
+@keyframes fadeUp {
+    0%{opacity: 0; transform: translateY(15px);}
+    100%{opacity: 1; transform: translateY(0);}
+}
+.login form input[type=submit]:hover {
+    background: #0b7ca0;
+    transition: .3s;
+}
+.login form input[type=submit]:active {
+    transition: .3s;
+    transform: scale(.9);
+}
+.container {
+    margin: auto;
+    padding: 0 20px;
+    max-width: 1040px;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+.quit:before {
+    vertical-align: middle;
+    display: inline-block;
+    content: '';
+    background: url("../image/logout.png") no-repeat center center /contain;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    filter: invert(1);
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+main {
+    flex: 1 1 auto;
+}
+header {
+    background: #2ca5e0;
+}
+footer {
+    background: #2d2d2d;
+}
+header, footer {
+    padding: 15px 0;
+    color: #fff;
+}
+img {
+    max-width: 100%;
+}
+.rooms {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    margin: 0 -10px;
+}
+.room h3 {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    color: #FFF;
+    z-index: 3;
+    transform: translateY(100%);
+    transition: .4s;
+    transition-delay: 0s;
+    padding: 0 10px 15px;
+}
+.room {
+    margin: 10px;
+    width: calc(25% - 20px);
+    flex: 0 0 auto;
+}
+@media(max-width: 928px){
+    .room {
+        width: calc(100% / 3 - 20px);
+    }
+}
+
+@media(max-width: 768px){
+    .room {
+        width: calc(50% - 20px);
+    }
+}
+
+@media(max-width: 388px){
+    .room {
+        width: calc(100% - 20px);
+    }
+}
+
+.room-photo {
+    overflow: hidden;
+    position: relative; }
+.room-photo:before {
+    background: red;
+    content: "";
+    display: block;
+    padding-top: 56.25%; }
+.room-photo:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,1));
+    z-index: 2;
+    transform: translateY(100%);
+    transition: .6s;
+}
+.room-photo img { object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; }
+.room:hover h3  {
+    transform: translateY(0);
+    transition: .4s;
+    transition-delay: .4s;
+}
+.room:hover .room-photo:after  {
+    transform: translateY(0);
+
+}
+
+
+.check {  }
+.check input {
+    display: none;}
+.check span {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding-left: 25px;
+    position: relative; }
+.check span:before{
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: block;
+    background: #FFF;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 0;
+    border: 1px solid #000;  border-radius: 3px; }
+.check span:after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: url(../image/checked.svg) no-repeat 50% 50% / contain;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    left: 3px;
+    transition: .3s;
+    opacity: 0; transform: translateY(-5px); }
+.check input:checked ~ span:after {
+    opacity: 1; transform: translateY(0);}
+
+
+.toggle {}
+.toggle input {
+    display: none;}
+.toggle span {
+    display: block;
+    width: 30px;
+    height: 12px; border-radius: 10px;
+    position: relative; border: 1px solid #34bfec; }
+.toggle span:before {
+    width: 18px;
+    height: 18px; border-radius: 50%;
+    background: #34bfec;
+    content: "";
+    position: absolute;
+    left: 0;
+    transition: .3s;
+    top: -4px; }
+.toggle input:checked ~ span:before {
+    left: calc(100% - 18px); }
+.toggle span {}
+
+div[contenteditable=""] {
+    border: 1px solid red;
+    padding: 20px; min-height: 140px; }
+
+.textarea { resize: vertical; }
+
+
+
+
+
+
+.photo {
+    position: relative;
+}
+.photo .photoAfter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-right: 1px solid gray;
+    background-size: cover;
+}
+.photo .photoAfter .circle{
+    position: absolute;
+    top: calc(50% - 10px);
+    right: -10px;
+    height: 20px;
+    width: 20px;
+    background-color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+
+.pictureContainer {
+    height: 150px;
+    width: 150px;
+    overflow: hidden;
+}
+.pictureContainer img {
+    position: relative;
+    top: 0px;
+}
+.pictureContainer img:hover {
+    top: -150px;
+}
+
+.pictureContainer img {
+    position: relative;
+    top: 0px;
+
+    transition: top .2s ease-in-out;
+}
+.pictureContainer img:hover {
+    top: -150px;
+}
